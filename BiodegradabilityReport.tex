@@ -1,0 +1,303 @@
+\documentclass[10pt, letter]{report}
+\usepackage[utf8]{inputenc}
+%\usepackage[frenchb]{babel}
+\usepackage[T1]{fontenc}
+%\usepackage{a4wide}
+\usepackage{indentfirst}
+\usepackage{amsfonts}
+\usepackage{graphicx,graphics}
+\usepackage{amssymb}
+\usepackage{rotate}
+%\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{epsf}
+\usepackage{epsfig}
+\usepackage{amsmath}
+\usepackage{psfrag}
+\usepackage{color}
+%\usepackage{draftcopy}
+\usepackage{NOMBRE}
+%\usepackage{marvosym}
+\usepackage{dcolumn}
+\usepackage{subfigure}
+\usepackage{color}
+\usepackage{fancybox}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+%\usepackage{xspace}
+%\usepackage[breaklinks=true]{hyperref}
+%\usepackage{transfig}
+\usepackage{lastpage}
+\usepackage{placeins}
+
+\pagestyle{headings}
+%\usepackage{palatino}
+\topmargin=-1cm
+\rightmargin=0cm
+\headheight=1cm
+\headsep=1cm
+\footskip=1cm
+\textheight=21.5cm
+\textwidth=16.4cm
+\oddsidemargin=-0.5cm
+\evensidemargin=-0.5cm
+%\usepackage{braket}
+%\newtheorem{theo}{Théorème}
+%\bigskip
+\def\Tiny{\fontsize{3pt}{3pt}\selectfont}
+
+
+
+\newcolumntype{M}[1]{>{\raggedright}m{#1}}
+
+\newcommand{\ket}[1]{\ensuremath{\left| #1 \right\rangle}}
+\newcommand{\bra}[1]{\ensuremath{\left\langle #1 \right|}}
+\newcommand{\vect}[1]{\ensuremath{\overrightarrow{#1}}}
+\newcommand{\encadre}[1]{\begin{equation}
+\begin{tabular}{|c|}
+\hline
+\\
+$\displaystyle \; #1 \;$\\
+\\ \hline
+\end{tabular}
+\end{equation}}
+
+
+\newcommand{\encadredeux}[1]{\begin{equation}
+\begin{tabular}{|c|}
+\hline
+\\
+$\displaystyle \; #1 \;$\\
+\\ \hline
+\end{tabular}\nonumber
+\end{equation}}
+
+
+\newcommand{\encadrebut}[1]{\begin{equation}
+\begin{tabular}{|c|}
+\hline
+\\
+$\displaystyle \; \mbox{\underline{But} :  #1} \;$\\
+\\ \hline
+\end{tabular}\nonumber
+\end{equation}}
+
+
+\newcommand{\moy}[1]{\ensuremath{\left\langle #1 \right\rangle}}
+\newcommand{\ave}[1]{\ensuremath{\bar{#1}}}
+
+
+
+\title{Modélisation Silice}
+\date{Juillet 2012}
+\author{Jean-Yves DELANNOY}
+
+\newcommand{\f}[2]{{\ensuremath{\mathchoice%
+        {\dfrac{#1}{#2}}
+        {\dfrac{#1}{#2}}
+        {\frac{#1}{#2}}
+        {\frac{#1}{#2}}
+        }}}
+
+%\bibliographystyle{plain}
+%\bibliography{bibli.bib}
+
+
+\renewcommand{\=}{\, =\, }
+\newcommand{\+}{\, +\, }
+\renewcommand{\-}{\, -\, }
+\newcommand{\vv}{\vspace{-0.5cm}}
+
+\newcommand{\trip}[3]{\ensuremath{\left[T_{#1},\left[T_{#2},T_{#3}\right]\right]}}
+
+\newcommand{\eqn}[1]{\begin{equation} #1 \end{equation}}
+
+
+\newcommand{\property}[2]{{\underline{Propriété #1}} : 
+{\it \bf #2}
+}
+
+\newcommand{\ie}{{\it i.e. }}
+\newcommand{\cf}{{\it cf.~}}
+
+\newcommand{\bc}[1]{\begin{tabular}{|c|}
+\hline
+#1\\
+\hline\end{tabular}_{p\times p}}
+
+\newcommand{\entier}[1]{\left[\hspace{-1ex}\left[\hspace{0.5ex}#1\hspace{0.5ex} \right]\hspace{-1ex}\right]}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Show subsubsection numbers as a letter
+\setcounter{secnumdepth}{3}
+\makeatletter
+\renewcommand\thesubsubsection{\thesubsection .\@alph \c@subsubsection}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% make graph and figure scaling uniform
+
+\newcommand{\setpath}[1]{
+  \graphicspath{{figures/#1/}{graphes/#1/}}
+}
+
+\newcommand{\graphscale}{0.27}
+\newcommand{\figscale}{0.6}
+
+\newcommand{\includefigure}{\includegraphics}
+\newcommand{\includegraph}{\includegraphics}
+
+\newcommand{\includescaledgraph}[1]{%
+  \includegraphics[scale=\graphscale]{#1}%
+}
+
+\newcommand{\includescaledfigure}[1]{%
+  \includegraphics[scale=\figscale]{#1}%
+}
+
+
+\newlength{\espace}
+\setlength{\espace}{0.8cm}
+\setlength{\footskip}{1cm}
+\definecolor{gris}{gray}{0.5}
+%\graphicspath{{../}{C:/Users/jdelanno/Documents/Presentation/IMAGES/}{C:/Users/jdelanno/Documents/COMPNANOCOMP/Deliverables/}}
+
+
+%\graphicspath
+%\usepackage{fancyhdr}
+\setlength{\headheight}{25pt}
+
+ 
+\pagestyle{fancy}
+%\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}{}}
+\renewcommand{\headrulewidth}{0pt} % remove lines as well
+\renewcommand{\footrulewidth}{0pt}
+
+\fancyhf{}
+\fancyfoot[LE,RO]{\thepage}
+%\fancyfoot[RE]{\textit{\rightmark}}
+%\fancyfoot[LO]{\textit{\rightmark}}
+%\fancyfoot[RE,LO]{\textit{\rightmark}\\
+%\vspace*{1.5cm}
+%\textcolor{gris}{\Tiny Centre de Recherches et Technologies de Lyon : 85, rue des Frères Perret. BP 62. F-69192 Saint-Fons. Tél. : +33 4 72 89 67 89. Fax : +33 4 72 89 68 63\\
+%Siret : 622 037 083 00285\\
+%Dénomination sociale : Rhodia Opérations. 40, rue de la Haie Coq. 93306 Aubervilliers Cedex. France. Tél. : + 33 1 53 56 50 00. Fax : + 33 1 53 56 55 55\\
+%Société par Actions Simplifiée au capital de 695 897 850 euros. RCS Bobigny 622 037 083. TVA intracommunautaire 41 622 038 083\\
+%{\bf www.rhodia.com}}
+%}
+
+\fancyhead[LE,RO]{\hspace*{2cm}\includegraphics[width=0.08\textwidth]{Logo_Solvay}}
+
+\usepackage[final]{pdfpages}
+
+
+\newcommand{\degre}{$^{\circ}\mathrm{C}\,$}
+
+
+\begin{document}
+
+
+\title{\textbf{COMPNANOCOMP Final Report.}}
+%treatment
+
+
+\author{P. J. Kowalczyk}
+\date{\today}
+
+\vspace*{1cm}
+\hspace*{-1cm}\begin{tabular}{p{0.49\textwidth}p{0.08\textwidth}p{0.42\textwidth}}
+{\bf Date:} \today & \multicolumn{2}{r}{{\huge \bf{Technical Report }}}\\
+\\
+\hline
+\\
+{\bf De} : Paul KOWALCZYK  & \bf{\`A:} & Jean-Yves DELANNOY \\
+&& Antoine EMERY \\
+
+ \\
+{\bf Copie} :   \\
+{\bf Ref} :&  {\bf Pages : }  & \pageref{LastPage} \\
+\\
+\hline
+\\
+\multicolumn{3}{c}{\LARGE Classification Models for Ready Biodegradability} \\
+\\
+\hline
+\end{tabular}
+%
+\vspace*{2cm}
+
+Lorem ipsum dolor sit amet, quisque sed elit nunc duis est rutrum, posuere euismod magna odio sed egestas, turpis convallis integer suspendisse facilisis suspendisse, cras nibh lorem fusce accumsan. Ornare mus aliquam, phasellus vitae ac. Ac in posuere, ullamcorper suspendisse potenti accumsan, donec eu enim fusce, vel accumsan vivamus mauris, lorem lacus erat facilisis cras praesentium in. Ornare lectus risus, magna tincidunt sit a dolor bibendum non. Cras tellus. Metus in condimentum cillum, sed quis libero egestas eget ipsum blandit, aliquam rhoncus fusce integer dictumst duis, facilisis duis felis et vel dignissim.
+
+
+\vspace*{1cm}
+\begin{tabular*}{5.03\textwidth}{lr}
+%\includegraphics[height=1.5cm,width=4cm]{signature_JY} & \includegraphics[height=1.5cm,width=4cm]{signature_F_clement} \\
+Paul KOWALCZYK\\
+\end{tabular*}
+
+\tableofcontents
+
+
+
+
+
+
+\chapter{Introduction}
+
+\chapter{Materials and Methods}
+
+\section{Data Set Construction}
+
+\section{Calculation of Molecular Descriptors}
+
+\section{Calculation of Molecular Fingerprints}
+
+\section{Modeling Methods}
+
+\section{Definition of Model Applicability Domain}
+
+\section{Privileged Substructures Analysis}
+
+\section{Performance Evaluation of Models}
+
+\chapter{Results}
+
+\section{Chemical Space Analysis}
+
+\section{Performance of Descriptor-Based Models}
+
+\section{Performance of Fingerprint-Based Models}
+
+\section{Role of the Applicability Domain (AD)}
+
+\section{Privileged Substructure for Chemical Biodegradation}
+
+\chapter{Discussion}
+
+\section{Comparison of Different Modeling Methods}
+
+\section{Diversity of the Data Set}
+
+\section{Relevance of Selected Chemical Descriptors to the Biodegradability Mechanism}
+
+\section{Visual Analysis of Substructure Alerts for Chemical Biodegradation}
+
+\chapter{Conclusion}
+
+\chapter{Associated Content}
+
+\chapter{References}
+
+
+\end{document}
+
+
+
+
+
